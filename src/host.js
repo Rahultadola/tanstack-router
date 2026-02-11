@@ -1,5 +1,5 @@
-const hostURL = "http://localhost:3000/tanstack-events/events";
+const hostURL = "https://combined-express-portfolio.vercel.app/tanstack-events/events";
 
-export const baseURL = "http://localhost:3000/";
+export const baseURL = "https://combined-express-portfolio.vercel.app/";
 
 export default hostURL;
