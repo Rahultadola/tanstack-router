@@ -8,6 +8,8 @@ import Header from '../Header.jsx';
 import LoadingIndicator from '../UI/LoadingIndicator.jsx';
 import ErrorBlock from '../UI/ErrorBlock.jsx';
 
+import { baseURL } from '../../host.js';
+
 export default function EventDetails() {
   const { id } = useParams()
   const navigate = useNavigate()
@@ -55,7 +57,7 @@ export default function EventDetails() {
             </nav>
           </header>
           <div id="event-details-content">
-            <img src={`http://localhost:3000/${event.image}`} alt={event.title} />
+            <img src={baseURL + event.image} alt={event.title} /> 
             <div id="event-details-info">
               <div>
                 <p id="event-details-location">{ event.location }</p>
@@ -69,3 +71,4 @@ export default function EventDetails() {
     </>
   );
 }
+// src={`http://localhost:3000/${event.image}`} 

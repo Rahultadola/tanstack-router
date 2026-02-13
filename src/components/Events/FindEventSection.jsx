@@ -45,12 +45,16 @@ export default function FindEventSection({allEvents}) {
     content = <LoadingIndicator />
   }
 
-  if( data ) {
+  if( data && data.length > 0) {
     // console.log("init data: ", data)
     content = <ul className="events-list">
       { data.map((ev) => <li key={ev.id}><EventItem event={ev}/></li>) }
     </ul>
-  }  
+  } else {
+      if( !isLoading ) {
+        content = (<p>No matching event found.</p>)
+      }
+  }
 
   return (
     <section className="content-section" id="all-events-section">

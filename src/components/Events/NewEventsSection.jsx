@@ -28,7 +28,7 @@ export default function NewEventsSection() {
     );
   }
 
-  if (data) {
+  if (data && data.length > 0) {
     content = (
       <ul className="events-list">
         {data.map((event) => (
@@ -38,7 +38,11 @@ export default function NewEventsSection() {
         ))}
       </ul>
     );
+  } else {
+    content = (<p>No recent events found.</p>);
   }
+
+  console.log("Event data content", data)
 
   return (
     <section className="content-section" id="new-events-section">
