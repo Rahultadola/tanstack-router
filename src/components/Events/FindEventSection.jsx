@@ -31,6 +31,7 @@ export default function FindEventSection({allEvents}) {
   }
 
   useEffect(() => {
+    searchElement.current.value = "";
     setSearchText(allEvents ? "" : undefined)
   }, [allEvents])
 
